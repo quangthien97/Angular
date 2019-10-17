@@ -1,0 +1,19 @@
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">createdBy</th>
+            <th scope="col">name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cate of data">
+            <td>{{cate._id}}</td>
+            <td>{{cate.createdBy.username}}</td>
+            <td>{{cate.name}}</td>
+            <td><a [routerLink]="[ '/category-edit', cate._id]">edit</a></td>
+            <td><button (click)="onDelete(cate._id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -12,12 +12,10 @@ export class ListProductComponent implements OnInit {
   constructor(private router: Router, private registerservice: RegisterService) { }
 
   ngOnInit() {
-    console.log("=======")
     let url = "http://localhost:3000/products/";
     this.registerservice.get(url)
       .subscribe((data) => {
         console.log(data);
-        
       })
   }
 

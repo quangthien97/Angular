@@ -9,7 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListProductComponent } from './list-product/list-product.component';
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
 import { ListUserComponent } from './user/list-user/list-user.component';
-
+import { ListCategoryComponent } from './category/list-category/list-category.component';
+import { SearchCategoryComponent } from './category/search-category/search-category.component';
+import { EditCategoryComponent } from './category/edit-category/edit-category.component';
+import { DeleteCategoryComponent } from './category/delete-category/delete-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +20,17 @@ import { ListUserComponent } from './user/list-user/list-user.component';
     RegisterComponent,
     ListProductComponent,
     CreateCategoryComponent,
-    ListUserComponent
+    ListUserComponent,
+    ListCategoryComponent,
+    SearchCategoryComponent,
+    EditCategoryComponent,
+    DeleteCategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

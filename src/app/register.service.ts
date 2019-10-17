@@ -9,11 +9,16 @@ export class RegisterService {
   data;
   constructor(private http: HttpClient) { }
   handleHeader() {
-    return {
-      headers: new HttpHeaders({
-        token: localStorage.getItem('token')
-      })
+    if (localStorage.getItem('auth-token') != null) {
+      return {
+        headers: new HttpHeaders({
+          auth_token: localStorage.getItem('auth-token')
+        })
+      }
+    } else{
+      console.log("==========")
     }
+
   }
   get(url) {
     return this.http.get(url, this.handleHeader());

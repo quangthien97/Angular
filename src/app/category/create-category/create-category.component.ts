@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegisterService } from './../../register.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-create-category',
@@ -24,8 +25,7 @@ export class CreateCategoryComponent implements OnInit {
   handleResponse(data) {
     console.log(data);
     if (data.code == 200) {
-      localStorage.setItem('auth-token', data.token);
-      this.router.navigateByUrl('/product');
+      this.router.navigateByUrl('/category-list');
     } else {
       this.router.navigateByUrl('/login');
     }
