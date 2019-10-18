@@ -9,10 +9,10 @@ export class RegisterService {
   data;
   constructor(private http: HttpClient) { }
   handleHeader() {
-    if (localStorage.getItem('auth-token') != null) {
+    if (localStorage.getItem('auth_token') != null) {
       return {
         headers: new HttpHeaders({
-          auth_token: localStorage.getItem('auth-token')
+          auth_token: localStorage.getItem('auth_token')
         })
       }
     } else{

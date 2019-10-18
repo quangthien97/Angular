@@ -28,4 +28,7 @@ export class ListCategoryComponent implements OnInit {
         this.ngOnInit()
       })
   }
+  // searchCate(name){
+
+  // }
 }

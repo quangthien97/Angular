@@ -18,5 +18,9 @@ export class ListProductComponent implements OnInit {
         console.log(data);
       })
   }
+  logOut() {
+    localStorage.clear();
+    this.router.navigateByUrl('/login');
+  }
 
 }

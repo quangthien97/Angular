@@ -13,8 +13,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("auth_token")) {
+      this.router.navigateByUrl('/category-list')
+    }
   }
   onSubmit() {
+    localStorage.clear();
     let url = "http://localhost:3000/login/";
     this.registerservice.post(url, this.model)
       .subscribe((data) => {
@@ -24,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
   handleResponse(data) {
     if (data.code == 200) {
-      localStorage.setItem('auth-token', data.token);
+      localStorage.setItem('auth_token', data.token);
       this.router.navigateByUrl('/product');
     } else {
       this.router.navigateByUrl('/login');
