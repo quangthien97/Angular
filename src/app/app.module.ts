@@ -13,6 +13,15 @@ import { ListCategoryComponent } from './category/list-category/list-category.co
 import { SearchCategoryComponent } from './category/search-category/search-category.component';
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
 import { DeleteCategoryComponent } from './category/delete-category/delete-category.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { DetailCategoryComponent } from './category/detail-category/detail-category.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PopModalComponent } from './pop-modal/pop-modal.component';
+import { EditAvatarComponent } from './user/edit-avatar/edit-avatar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +33,22 @@ import { DeleteCategoryComponent } from './category/delete-category/delete-categ
     ListCategoryComponent,
     SearchCategoryComponent,
     EditCategoryComponent,
-    DeleteCategoryComponent
+    DeleteCategoryComponent,
+    CreateProductComponent,
+    EditProductComponent,
+    DetailCategoryComponent,
+    PopModalComponent,
+    EditAvatarComponent,
+
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CKEditorModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

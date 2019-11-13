@@ -12,7 +12,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
     this.router.navigateByUrl('/login')
   }
   postConfig() {

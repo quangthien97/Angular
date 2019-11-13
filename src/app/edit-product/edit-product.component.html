@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>Create Product</h2>
+    <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+        <div class="form-group">
+            <label for="name">title:</label>
+            <input type="text" class="form-control" [(ngModel)]="model.title" id="name" #title="ngModel"
+                [pattern]="'^[a-zA-Z0-9 \'\-]+$'" name="title" required>
+            <div *ngIf="title.errors && (title.dirty || title.touched)">
+                <div *ngIf="title.errors.required">title is required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">name:</label>
+            <input type="text" class="form-control" [(ngModel)]="model.name" id="name" placeholder="Enter name"
+                #name="ngModel" name="name" required>
+            <div *ngIf="name.errors && (name.dirty || name.touched)">
+                <div *ngIf="name.errors.required">name is required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">oldPrice:</label>
+            <input type="number" class="form-control" [(ngModel)]="model.oldPrice" id="oldPrice"
+                placeholder="Enter oldPrice" #oldPrice="ngModel" name="oldPrice" required>
+            <div *ngIf="(oldPrice.dirty || oldPrice.touched) && oldPrice.errors">
+                <div *ngIf="oldPrice.errors.required">oldPrice is required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">newPrice:</label>
+            <input type="number" class="form-control" [(ngModel)]="model.newPrice" id="newPrice"
+                placeholder="Enter newPrice" #newPrice="ngModel" name="newPrice" required>
+            <div *ngIf="(newPrice.dirty || newPrice.touched) && newPrice.errors">
+                <div *ngIf="newPrice.errors.required">newPrice is required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">count:</label>
+            <input type="number" class="form-control" [(ngModel)]="model.count" id="count" placeholder="Enter count"
+                #count="ngModel" name="count" required>
+            <div *ngIf="(count.dirty || count.touched) && count.errors">
+                <div *ngIf="count.errors.required">count is required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">category:</label>
+            <select class="form-control" [(ngModel)]="model.category" id="category" placeholder="Enter category"
+                #category="ngModel" name="category" required>
+                <ng-container *ngFor="let cate of cates">
+                    <option value="{{cate._id}}">{{cate.name}}</option>
+                </ng-container>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-default" [disabled]="!f.valid">Submit</button>
+    </form>
+</div>

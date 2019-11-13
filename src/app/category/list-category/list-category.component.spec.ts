@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ListCategoryComponent } from './list-category.component';
 
 describe('ListCategoryComponent', () => {
@@ -8,9 +7,9 @@ describe('ListCategoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListCategoryComponent ]
+      declarations: [ListCategoryComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (localStorage.getItem("auth_token")) {
+    if (localStorage.getItem("token")) {
       this.router.navigateByUrl('/category-list')
     }
   }
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
   handleResponse(data) {
     if (data.code == 200) {
-      localStorage.setItem('auth_token', data.token);
+      localStorage.setItem('token', data.token);
       this.router.navigateByUrl('/product');
     } else {
       this.router.navigateByUrl('/login');

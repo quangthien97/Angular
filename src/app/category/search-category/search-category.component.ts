@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search-category',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-category.component.css']
 })
 export class SearchCategoryComponent implements OnInit {
-
+  searchText: any;
+  @Output() messageEvent = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
+  }
+  onChange() {
+    this.messageEvent.emit(this.searchText);
   }
 
 }

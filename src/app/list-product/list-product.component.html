@@ -2,30 +2,47 @@
 <table class="table table-dark">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">title</th>
+      <th scope="col">name</th>
+      <th scope="col">oldPrice</th>
+      <th scope="col">newPrice</th>
+      <th scope="col">countLike</th>
+      <th scope="col">ratingCount</th>
+      <th scope="col">avangeRating</th>
+      <th scope="col">status</th>
+      <th scope="col">count</th>
+      <th scope="col">category</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+    <tr *ngFor="let pro of data">
+      <td>{{pro.title}}</td>
+      <td [innerHTML]="pro.name"></td>
+      <td>{{pro.oldPrice}}</td>
+      <td>{{pro.newPrice}}</td>
+      <td>{{pro.countLike}}</td>
+      <td>{{pro.ratingCount}}</td>
+      <td>{{pro.avangeRating}}</td>
+      <td (click)="onStatus(pro._id)">{{pro.status}}</td>
+      <td>{{pro.count}}</td>
+      <td>{{pro.category.name}}</td>
+      <td><a [routerLink]="[ '/product-edit', pro._id]">edit</a></td>
+      <td><button (click)="onDelete(pro._id)">Delete</button></td>
     </tr>
   </tbody>
 </table>
+<ul>
+
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item active">
+        <a class="page-link" href="#">{{crPage}} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="next()">Next</a>
+      </li>
+    </ul>
+  </nav>
